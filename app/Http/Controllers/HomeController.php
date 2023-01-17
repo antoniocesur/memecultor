@@ -7,7 +7,7 @@ class HomeController extends Controller
     {
         $viewData = [];
         $viewData["titulo"] = "MemeCultor, el inicio";
-        $viewData["memes"]=[];
+        $viewData["memes"]=\App\Models\Meme::latest()->paginate(5);
         return view('home.index')->with("viewData", $viewData);
     }
 }
