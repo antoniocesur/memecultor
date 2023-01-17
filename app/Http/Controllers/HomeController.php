@@ -6,8 +6,8 @@ class HomeController extends Controller
     public function index()
     {
         $viewData = [];
-        $viewData["titulo"] = "Home Page - Online Store";
-        $viewData["memes"]=["hola", "adiós"];
+        $viewData["titulo"] = "MemeCultor, el inicio";
+        $viewData["memes"]=[];
         return view('home.index')->with("viewData", $viewData);
     }
 }
