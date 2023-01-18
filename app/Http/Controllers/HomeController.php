@@ -10,4 +10,13 @@ class HomeController extends Controller
         $viewData["memes"]=\App\Models\Meme::latest()->paginate(5);
         return view('home.index')->with("viewData", $viewData);
     }
+
+    public function show($id){
+        $viewData = [];
+        $meme=\App\Models\Meme::findOrFail($id);
+        $viewData["titulo"] = "Meme: " . $meme->nombre;
+        $viewData["meme"]=$meme;
+
+        return view('home.show')->with("viewData", $viewData);
+    }
 }

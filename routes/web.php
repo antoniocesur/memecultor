@@ -15,4 +15,5 @@ use App\Http\Controllers\MemeController;
 */
 
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
+Route::get('/show/{id}', 'App\Http\Controllers\HomeController@show')->name("home.show");
 Route::resource('memes', MemeController::class);
